@@ -10,8 +10,8 @@ tokens=[
     'TEXTO',
     'NUMERO',
     'DOCTYPE',
-    'AART', #ARTICLE
-    'CART',
+    'AART', #Apertura - ARTICLE
+    'CART', #Cierre - ARTICLE
     'ASECT', #SECTION
     'CSECT',
     'ASSECT', #simplesection
