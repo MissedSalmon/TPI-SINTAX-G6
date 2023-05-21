@@ -563,22 +563,60 @@ def t_error(t):
 
 print ("Hola este es el analizador Lexico")
 
-# Crear una ventana de Tkinter oculta
-ventana = Tk()
-ventana.withdraw()
+def opcion1():
+    print("Has seleccionado elegir un archivo desde el equipo.")
+    # Crear una ventana de Tkinter oculta
+    ventana = Tk()
+    ventana.withdraw()
 
-# Abrir el explorador de archivos y obtener la ruta del archivo seleccionado
-ruta_archivo = askopenfilename()
+    # Abrir el explorador de archivos y obtener la ruta del archivo seleccionado
+    ruta_archivo = askopenfilename()
 
-fp=codecs.open(ruta_archivo,"r","UTF-8")
-cad=fp.read()
-fp.close
-analizador = lex.lex()
-analizador.input(cad)
+    fp=codecs.open(ruta_archivo,"r","UTF-8")
+    cad=fp.read()
+    fp.close
+    analizador = lex.lex()
+    analizador.input(cad)  
+    print("\nLista de tokens\n")
 
-print("\nLista de tokens\n")
+    while True:
+        tok = analizador.token()
+        if not tok : break
+        print(tok) 
+
+def opcion2():
+    print("Has seleccionado ingresarlo por teclado.")
+    while True:
+        linea = input("Ingresa una línea (presiona Enter para continuar, o escribe 'salir' para terminar): ")
+        if linea == "salir":
+            break
+        cad=''
+        cad=cad+linea
+        analizador = lex.lex()
+        analizador.input(cad)  
+        print("\nLista de tokens\n")
+
+        while True:
+            tok = analizador.token()
+            if not tok : break
+            print(tok) 
 
 while True:
-    tok = analizador.token()
-    if not tok : break
-    print(tok)
+    print("MENU")
+    print("1. Elegir un archivo")
+    print("2. Ingresarlo por teclado")
+    print("4. Salir")
+
+    opcion = input("Selecciona una opción: ")
+
+    if opcion == "1":
+        opcion1()
+    elif opcion == "2":
+        opcion2()
+    elif opcion == "4":
+        print("Saliendo del programa...")
+        break
+    else:
+        print("Opción inválida. Por favor, selecciona una opción válida.")
+
+
