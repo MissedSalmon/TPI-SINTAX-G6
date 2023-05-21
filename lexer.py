@@ -101,7 +101,7 @@ def t_newline(t):
 
 #Definicion de la expresion regular del tag del dockbook
 def t_DOCTYPE(t):
-    r'<!DOCTYPE article>'
+    r'<\!DOCTYPE\s+article\s*\>'
     print("DOCKBOOK")
     return t 
 
@@ -530,7 +530,16 @@ def t_CLENTRY(t):
     return t
 
 #Definicion de la expresion regular de link PENDIENTE
+def t_OPLINK(t):
+    r'<(link)(\s+xlink:href=")((https?|ftp)://[\w\-]+(\.[\w\-]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?)"'
+    print("link")
+    return(t)
 
+
+def t_CLLINK(t):
+    r'</link>'
+    print("</link>")
+    return(t)
 
 #Definicion de la expresion regular de un texto
 def t_TEXTO(t):
