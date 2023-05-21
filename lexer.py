@@ -562,23 +562,20 @@ def t_error(t):
 
 
 print ("Hola este es el analizador Lexico")
+ # Crear una ventana de Tkinter oculta
+ventana = Tk()
+ventana.withdraw()
 
 def opcion1():
     print("Has seleccionado elegir un archivo desde el equipo.")
-    # Crear una ventana de Tkinter oculta
-    ventana = Tk()
-    ventana.withdraw()
-
     # Abrir el explorador de archivos y obtener la ruta del archivo seleccionado
     ruta_archivo = askopenfilename()
-
     fp=codecs.open(ruta_archivo,"r","UTF-8")
     cad=fp.read()
     fp.close
     analizador = lex.lex()
     analizador.input(cad)  
     print("\nLista de tokens\n")
-
     while True:
         tok = analizador.token()
         if not tok : break
