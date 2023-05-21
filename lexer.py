@@ -10,82 +10,82 @@ tokens=[
     'TEXTO', #Texto alfanumerico
     'NUMERO',
     'DOCTYPE',
-    'OpART', #Apertura - ARTICLE (Open)
-    'ClART', #Cierre - ARTICLE  (Close)
-    'OpSECT', #SECTION
-    'ClSECT',
-    'OpSSECT', #simplesection
-    'ClSSECT',
-    'OpINFO', 
-    'ClINFO',
-    'OpABST',
-    'ClABST',
-    'OpADD',    
-    'ClADD',
-    'OpAUTHOR',
-    'ClAUTHOR',
-    'OpCOPY',
-    'ClCOPY',
-    'OpTIT',
-    'ClTIT',
-    'OpSPARA',
-    'ClSPARA',
-    'OpEMPH',
-    'ClEMPH',
-    'OpCOM',
-    'ClCOM',   
-    'OpPARA',
-    'ClPARA',
-    'OpFNAME',
-    'ClFNAME',
-    'OpSNAME',
-    'ClSMANE',
-    'OpSTREET',
-    'ClSTREET',
-    'OpCITY',
-    'ClCITY',
-    'OpSTATE',
-    'ClSTATE',
-    'OpPHONE',
-    'ClPHONE',
-    'OpEMAIL',
-    'ClEMAIL',
-    'OpDATE',
-    'ClDATE',
-    'OpYEAR',
-    'ClYEAR',
-    'OpHOLDER',
-    'ClHOLDER',
-    'OpMOBJ', #MEDIA OBJECT
-    'ClMOBJ',
-    'OpVOBJ', #VIDEO  OBJECT
-    'ClVOBJ',
+    'OPART', #Apertura - ARTICLE (Open)
+    'CLART', #Cierre - ARTICLE  (Close)
+    'OPSECT', #SECTION
+    'CLSECT',
+    'OPSSECT', #simplesection
+    'CLSSECT',
+    'OPINFO', 
+    'CLINFO',
+    'OPABST',
+    'CLABST',
+    'OPADD',    
+    'CLADD',
+    'OPAUTHOR',
+    'CLAUTHOR',
+    'OPCOPY',
+    'CLCOPY',
+    'OPTIT',
+    'CLTIT',
+    'OPSPARA',
+    'CLSPARA',
+    'OPEMPH',
+    'CLEMPH',
+    'OPCOM',
+    'CLCOM',   
+    'OPPARA',
+    'CLPARA',
+    'OPFNAME',
+    'CLFNAME',
+    'OPSNAME',
+    'CLSMANE',
+    'OPSTREET',
+    'CLSTREET',
+    'OPCITY',
+    'CLCITY',
+    'OPSTATE',
+    'CLSTATE',
+    'OPPHONE',
+    'CLPHONE',
+    'OPEMAIL',
+    'CLEMAIL',
+    'OPDATE',
+    'CLDATE',
+    'OPYEAR',
+    'CLYEAR',
+    'OPHOLDER',
+    'CLHOLDER',
+    'OPMOBJ', #MEDIA OBJECT
+    'CLMOBJ',
+    'OPVOBJ', #VIDEO  OBJECT
+    'CLVOBJ',
     'VIDAT', #VIDEO DATA
     'VFORM', #VIDEO FORMATO
-    'OpIMOBJ', #IMAGEN OBJECT
-    'ClIMOBJ',
+    'OPIMOBJ', #IMAGEN OBJECT
+    'CLIMOBJ',
     'IMDATA', #IMAGEN DATA
     'IMFORM', #IMAGEN FORMAT
-    'OpILIST', #ITEMIZED LIST
-    'ClILIST',
-    'OpLITEM', #LIST ITEM
-    'ClLITEM',
-    'OpINTAB', #INFORMAL TABLE
-    'ClINTAB',
-    'OpTGROUP',
-    'ClTGROUP',
-    'OpHEAD',
-    'ClHEAD',
-    'OpFOOT',
-    'ClFOOT',
-    'OpBODY',
-    'ClBODY',
-    'OpROW',
-    'ClROW',
-    'OpENTRY',
-    'ClENTRY',
-    'OpLINK',
-    'ClLINK',
+    'OPILIST', #ITEMIZED LIST
+    'CLILIST',
+    'OPLITEM', #LIST ITEM
+    'CLLITEM',
+    'OPINTAB', #INFORMAL TABLE
+    'CLINTAB',
+    'OPTGROUP',
+    'CLTGROUP',
+    'OPHEAD',
+    'CLHEAD',
+    'OPFOOT',
+    'CLFOOT',
+    'OPBODY',
+    'CLBODY',
+    'OPROW',
+    'CLROW',
+    'OPENTRY',
+    'CLENTRY',
+    'OPLINK',
+    'CLLINK',
 ]
 
 #tokens especiales
@@ -104,301 +104,301 @@ def t_DOCTYPE(t):
     return t 
 
 #Definicion de la expresion regular de Abrir articulo
-def t_OpART(t):
+def t_OPART(t):
     r'<article>'
     print("<article>")
     return t 
 
 #Definicion de la expresion regular de Cerrar articulo
-def t_ClART(t):
+def t_CLART(t):
     r'</article>'
     print("</article>")
     return t 
 
 #Definicion de la expresion regular de Abrir section
-def t_OpSECT(t):
+def t_OPSECT(t):
     r'<section>'
     print("<section>")
     return t 
 
 #Definicion de la expresion regular de Cerrar section
-def t_ClSECT(t):
+def t_CLSECT(t):
     r'</section>'
     print("</section>")
     return t 
 
 #Definicion de la expresion regular de Abrir simlpesection
-def t_OpSSECT(t):
+def t_OPSSECT(t):
     r'<simplesect>'
     print("<simplesect>")
     return t 
 
 #Definicion de la expresion regular de Abrir simplesection
-def t_ClSSECT(t):
+def t_CLSSECT(t):
     r'</simplesec>'
     print("</simplesect>")
     return t 
 
 #Definicion de la expresion regular de Abrir info
-def t_OpINFO(t):
+def t_OPINFO(t):
     r'<info>'
     print("<info>")
     return t 
 
 #Definicion de la expresion regular de Cerrar info
-def t_ClINFO(t):
+def t_CLINFO(t):
     r'</info>'
     print("</info>")
     return t 
 
 #Definicion de la expresion regular de Abrir abstract
-def t_OpABST(t):
+def t_OPABST(t):
     r'<abstract>'
     print("<abstract>")
     return t 
 
 #Definicion de la expresion regular de Cerrar abstract
-def t_ClABST(t):
+def t_CLABST(t):
     r'</abstract>'
     print("</abstract>")
     return t 
 
 #Definicion de la expresion regular de Abrir address
-def t_OpADD(t):
+def t_OPADD(t):
     r'<address>'
     print("<address>")
     return t 
 
 #Definicion de la expresion regular de Cerrar address
-def t_ClADD(t):
+def t_CLADD(t):
     r'</address>'
     print("</address>")
     return t 
 
 #Definicion de la expresion regular de Abrir author
-def t_OpAUTHOR(t):
+def t_OPAUTHOR(t):
     r'<author>'
     print("<author>")
     return t 
 
 #Definicion de la expresion regular de Cerrar author
-def t_ClAUTHOR(t):
+def t_CLAUTHOR(t):
     r'</author>'
     print("</author>")
     return t 
 
 #Definicion de la expresion regular de Abrir copyright
-def t_OpCOPY(t):
+def t_OPCOPY(t):
     r'<copyright>'
     print("<copyright>")
     return t 
 
 #Definicion de la expresion regular de Cerrar copyright
-def t_ClCOPY(t):
+def t_CLCOPY(t):
     r'</copyright>'
     print("</copyright>")
     return t
 
 #Definicion de la expresion regular de Abrir title
-def t_OpTIT(t):
+def t_OPTIT(t):
     r'<title>'
     print("<title>")
     return t 
 
 #Definicion de la expresion regular de Cerrar title
-def t_ClTIT(t):
+def t_CLTIT(t):
     r'</title>'
     print("</title>")
     return t
 
 #Definicion de la expresion regular de Abrir simpara
-def t_OpSPARA(t):
+def t_OPSPARA(t):
     r'<simpara>'
     print("<simpara>")
     return t 
 
 #Definicion de la expresion regular de Cerrar simpara
-def t_ClSPARA(t):
+def t_CLSPARA(t):
     r'</simpara>'
     print("</simpara>")
     return t
 
 #Definicion de la expresion regular de Abrir emphasis
-def t_OpEMPH(t):
+def t_OPEMPH(t):
     r'<emphasis>'
     print("<emphasis>")
     return t 
 
 #Definicion de la expresion regular de Cerrar emphasis
-def t_ClEMPH(t):
+def t_CLEMPH(t):
     r'</emphasis>'
     print("</emphasis>")
     return t
 
 #Definicion de la expresion regular de Abrir comment
-def t_OpCOM(t):
+def t_OPCOM(t):
     r'<comment>'
     print("<comment>")
     return t 
 
 #Definicion de la expresion regular de Cerrar comment
-def t_ClCOM(t):
+def t_CLCOM(t):
     r'</comment>'
     print("</comment>")
     return t
 
 #Definicion de la expresion regular de Abrir para
-def t_OpPARA(t):
+def t_OPPARA(t):
     r'<para>'
     print("<para>")
     return t 
 
 #Definicion de la expresion regular de Cerrar para
-def t_ClPARA(t):
+def t_CLPARA(t):
     r'</para>'
     print("</para>")
     return t
 
 #Definicion de la expresion regular de Abrir firstname
-def t_OpFNAME(t):
+def t_OPFNAME(t):
     r'<firstname>'
     print("<firstname>")
     return t 
 
 #Definicion de la expresion regular de Cerrar firstname
-def t_ClFNAME(t):
+def t_CLFNAME(t):
     r'</firstname>'
     print("</firstname>")
     return t
 
 #Definicion de la expresion regular de Abrir surname
-def t_OpSNAME(t):
+def t_OPSNAME(t):
     r'<surname>'
     print("<surname>")
     return t 
 
 #Definicion de la expresion regular de Cerrar surname
-def t_ClSMANE(t):
+def t_CLSMANE(t):
     r'</surname>'
     print("</surname>")
     return t
 
 #Definicion de la expresion regular de Abrir street
-def t_OpSTREET(t):
+def t_OPSTREET(t):
     r'<street>'
     print("<street>")
     return t 
 
 #Definicion de la expresion regular de Cerrar street
-def t_ClSTREET(t):
+def t_CLSTREET(t):
     r'</street>'
     print("</street>")
     return t
 
 #Definicion de la expresion regular de Abrir city
-def t_OpCITY(t):
+def t_OPCITY(t):
     r'<city>'
     print("<city>")
     return t 
 
 #Definicion de la expresion regular de Cerrar city
-def t_ClCITY(t):
+def t_CLCITY(t):
     r'</city>'
     print("</city>")
     return t
 
 #Definicion de la expresion regular de Abrir state
-def t_OpSTATE(t):
+def t_OPSTATE(t):
     r'<state>'
     print("<state>")
     return t 
 
 #Definicion de la expresion regular de Cerrar state
-def t_ClSTATE(t):
+def t_CLSTATE(t):
     r'</state>'
     print("</state>")
     return t
 
 #Definicion de la expresion regular de Abrir phone
-def t_OpPHONE(t):
+def t_OPPHONE(t):
     r'<phone>'
     print("<phone>")
     return t 
 
 #Definicion de la expresion regular de Cerrar phone
-def t_ClPHONE(t):
+def t_CLPHONE(t):
     r'</phone>'
     print("</phone>")
     return t
 
 #Definicion de la expresion regular de Abrir email
-def t_OpEMAIL(t):
+def t_OPEMAIL(t):
     r'<email>'
     print("<email>")
     return t 
 
 #Definicion de la expresion regular de Cerrar email
-def t_ClEMAIL(t):
+def t_CLEMAIL(t):
     r'</email>'
     print("</email>")
     return t
 
 #Definicion de la expresion regular de Abrir date
-def t_OpDATE(t):
+def t_OPDATE(t):
     r'<date>'
     print("<date>")
     return t 
 
 #Definicion de la expresion regular de Cerrar date
-def t_ClDATE(t):
+def t_CLDATE(t):
     r'</date>'
     print("</date>")
     return t
 
 #Definicion de la expresion regular de Abrir year
-def t_OpYEAR(t):
+def t_OPYEAR(t):
     r'<year>'
     print("<year>")
     return t 
 
 #Definicion de la expresion regular de Cerrar year
-def t_ClYEAR(t):
+def t_CLYEAR(t):
     r'</year>'
     print("</year>")
     return t
 
 #Definicion de la expresion regular de Abrir holder
-def t_OpHOLDER(t):
+def t_OPHOLDER(t):
     r'<holder>'
     print("<holder>")
     return t 
 
 #Definicion de la expresion regular de Cerrar holder
-def t_ClHOLDER(t):
+def t_CLHOLDER(t):
     r'</holder>'
     print("</holder>")
     return t
 
 #Definicion de la expresion regular de Abrir mediaobject
-def t_OpMOBJ(t):
+def t_OPMOBJ(t):
     r'<mediaobject>'
     print("<mediaobject>")
     return t 
 
 #Definicion de la expresion regular de Cerrar mediaobject
-def t_ClMOBJ(t):
+def t_CLMOBJ(t):
     r'</mediaobject>'
     print("</mediaobject>")
     return t
 
 #Definicion de la expresion regular de Abrir videoobject
-def t_OpVOBJ(t):
+def t_OPVOBJ(t):
     r'<videoobject>'
     print("<videoobject>")
     return t 
 
 #Definicion de la expresion regular de Cerrar videoobject
-def t_ClVOBJ(t):
+def t_CLVOBJ(t):
     r'</videoobject>'
     print("</videoobject>")
     return t
@@ -406,13 +406,13 @@ def t_ClVOBJ(t):
 #Definición de 'VIDAT', 'VFORM' PENDIENTE
 
 #Definicion de la expresion regular de Abrir imageobject
-def t_OpIMOBJ(t):
+def t_OPIMOBJ(t):
     r'<imageobject>'
     print("<imageobject>")
     return t 
 
 #Definicion de la expresion regular de Cerrar imageobject
-def t_ClIMOBJ(t):
+def t_CLIMOBJ(t):
     r'</imageobject>'
     print("</imageobject>")
     return t
@@ -420,109 +420,109 @@ def t_ClIMOBJ(t):
 #Definición de 'IMDATA', 'IMFORM' PENDIENTE
 
 #Definicion de la expresion regular de Abrir itemizedlist
-def t_OpILIST(t):
+def t_OPILIST(t):
     r'<itemizedlist>'
     print("<itemizedlist>")
     return t 
 
 #Definicion de la expresion regular de Cerrar itemizedlist
-def t_ClILIST(t):
+def t_CLILIST(t):
     r'</itemizedlist>'
     print("</itemizedlist>")
     return t
 
 #Definicion de la expresion regular de Abrir listitem
-def t_OpLITEM(t):
+def t_OPLITEM(t):
     r'<listitem>'
     print("<listitem>")
     return t 
 
 #Definicion de la expresion regular de Cerrar listitem
-def t_ClLITEM(t):
+def t_CLLITEM(t):
     r'</listitem>'
     print("</listitem>")
     return t
 
 #Definicion de la expresion regular de Abrir informaltable
-def t_OpINTAB(t):
+def t_OPINTAB(t):
     r'<informaltable>'
     print("<informaltable>")
     return t 
 
 #Definicion de la expresion regular de Cerrar informaltable
-def t_ClINTAB(t):
+def t_CLINTAB(t):
     r'</informaltable>'
     print("</informaltable>")
     return t
 
 #Definicion de la expresion regular de Abrir tgroup
-def t_OpTGROUP(t):
+def t_OPTGROUP(t):
     r'<tgroup>'
     print("<tgroup>")
     return t 
 
 #Definicion de la expresion regular de Cerrar tgroup
-def t_ClGROUP(t):
+def t_CLGROUP(t):
     r'</tgroup>'
     print("</tgroup>")
     return t
 
 #Definicion de la expresion regular de Abrir thead
-def t_OpHEAD(t):
+def t_OPHEAD(t):
     r'<thead>'
     print("<thead>")
     return t 
 
 #Definicion de la expresion regular de Cerrar thead
-def t_ClHEAD(t):
+def t_CLHEAD(t):
     r'</thead>'
     print("</thead>")
     return t
 
 #Definicion de la expresion regular de Abrir tfoot
-def t_OpFOOT(t):
+def t_OPFOOT(t):
     r'<tfoot>'
     print("<tfoot>")
     return t 
 
 #Definicion de la expresion regular de Cerrar tfoot
-def t_ClFOOT(t):
+def t_CLFOOT(t):
     r'</tfoot>'
     print("</tfoot>")
     return t
 
 #Definicion de la expresion regular de Abrir tbody
-def t_OpBODY(t):
+def t_OPBODY(t):
     r'<tbody>'
     print("<tbody>")
     return t 
 
 #Definicion de la expresion regular de Cerrar tbody
-def t_ClBODY(t):
+def t_CLBODY(t):
     r'</tbody>'
     print("</tbody>")
     return t
 
 #Definicion de la expresion regular de Abrir row
-def t_OpROW(t):
+def t_OPROW(t):
     r'<row>'
     print("<row>")
     return t 
 
 #Definicion de la expresion regular de Cerrar row
-def t_ClROW(t):
+def t_CLROW(t):
     r'</row>'
     print("</row>")
     return t
 
 #Definicion de la expresion regular de Abrir entry
-def t_OpENTRY(t):
+def t_OPENTRY(t):
     r'<entry>'
     print("<entry>")
     return t 
 
 #Definicion de la expresion regular de Cerrar entry
-def t_ClENTRY(t):
+def t_CLENTRY(t):
     r'</entry>'
     print("</entry>")
     return t
@@ -562,6 +562,6 @@ analizador.input(cad)
 print("\nLista de tokens\n")
 
 while True:
- 	tok = analizador.token()
- 	if not tok : break
-print(tok)
+    tok = analizador.token()
+    if not tok : break
+    print(tok)
