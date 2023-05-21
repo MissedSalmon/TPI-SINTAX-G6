@@ -3,6 +3,8 @@ import sys
 import re
 import codecs
 import os
+from tkinter import Tk
+from tkinter.filedialog import askopenfilename
 
 
 #definimos una lista con los tokens a utilizar
@@ -551,12 +553,18 @@ def t_error(t):
 
 
 print ("Hola este es el analizador Lexico")
-print ("Ingrese manualmente el codigo")
-cad = input('')
 
+# Crear una ventana de Tkinter oculta
+ventana = Tk()
+ventana.withdraw()
 
+# Abrir el explorador de archivos y obtener la ruta del archivo seleccionado
+ruta_archivo = askopenfilename()
+
+fp=codecs.open(ruta_archivo,"r","UTF-8")
+cad=fp.read()
+fp.close
 analizador = lex.lex()
-
 analizador.input(cad)
 
 print("\nLista de tokens\n")
